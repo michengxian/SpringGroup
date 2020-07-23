@@ -2,7 +2,7 @@
 
 ## 注意事项
 
-**首先需要安装****zookeeper，并运行**
+**首先需要安装zookeeper，并运行**
 
 
 
@@ -14,7 +14,7 @@
 
 zookeeper 常用命令
 
-```
+```bash
 # 进入目录
 cd apache-zookeeper-3.5.8-bin/bin
 
@@ -41,8 +41,7 @@ set /zk_test junk
 delete /zk_test
 ```
 
-**
-**
+
 
 ## consumer-server（消费者）
 
@@ -54,7 +53,7 @@ delete /zk_test
 
 ### pom.xml
 
-```
+```xml
 <!--导入依赖 Dubbo + zookeeper  -->
 
 <!-- Dubbo -->
@@ -99,7 +98,7 @@ delete /zk_test
 
 ### application.properties
 
-```
+```properties
 server.port=8001
 
 # 服务器应用名字
@@ -116,7 +115,7 @@ dubbo.scan.base-packages=com.zookeeper.service
 
 ### TicketServiceImpl
 
-```
+```java
 package com.zookeeper.service;
 
 import org.apache.dubbo.config.annotation.DubboService;
@@ -145,7 +144,7 @@ public class TicketServiceImpl implements TicketService {
 
 ### UserServiceImpl使用
 
-```
+```java
 package com.zookeeper.service;
 
 import org.apache.dubbo.config.annotation.DubboReference;
@@ -167,7 +166,7 @@ public class UserServiceImpl implements UserService {
 
 ### ConsumerController 使用
 
-```
+```java
 package com.zookeeper.controller;
 
 import com.zookeeper.service.TicketService;
