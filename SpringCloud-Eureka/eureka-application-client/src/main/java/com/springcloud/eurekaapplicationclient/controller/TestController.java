@@ -32,7 +32,7 @@ public class TestController {
 
     @RequestMapping(value="/getUserList")
     public List<UserBean> getUserList(){
-        ServiceInstance si = this.loadBalancerClient.choose("application-service-a");
+        ServiceInstance si = this.loadBalancerClient.choose("application-service");
         StringBuilder sb = new StringBuilder();
         sb.append("http://").append(si.getHost())
                 .append(":").append(si.getPort()).append("/getUserList");
@@ -52,7 +52,7 @@ public class TestController {
 
     @RequestMapping(value="/getTest")
     public String getTest() {
-        ResponseEntity<String> list = restTemplate.getForEntity("http://application-service-a/getTest",String.class);
+        ResponseEntity<String> list = restTemplate.getForEntity("http://application-service/getTest",String.class);
         System.out.println("getTest"+list.getBody());
 //        List<UserBean> userBeanList = new ArrayList<>();
         return list.getBody();
@@ -65,7 +65,7 @@ public class TestController {
         //调用10次用户微服务
         for (int i = 1; i <= 10; i++) {
             //微服务之间调用时，需将serviceId(spring.application.name)作为请求路径父级目录
-            String url = "http://application-service-a/getUser?id="+i;
+            String url = "http://application-service/getUser?id="+i;
             System.out.println(url);
             userId = restTemplate.getForObject(url, String.class);
         }
@@ -75,7 +75,7 @@ public class TestController {
 
     @RequestMapping(value="/getTest01")
     public String getTest01() {
-        ResponseEntity<String> list = restTemplate.getForEntity("http://application-service-b/getTest",String.class);
+        ResponseEntity<String> list = restTemplate.getForEntity("http://application-service/getTest",String.class);
         System.out.println("getTest"+list.getBody());
 //        List<UserBean> userBeanList = new ArrayList<>();
         return list.getBody();
@@ -89,7 +89,7 @@ public class TestController {
         //调用10次用户微服务
         for (int i = 1; i <= 10; i++) {
             //微服务之间调用时，需将serviceId(spring.application.name)作为请求路径父级目录
-            String url = "http://application-service-b/getUser?id="+i;
+            String url = "http://application-service/getUser?id="+i;
             System.out.println(url);
             userId = restTemplate.getForObject(url, String.class);
         }
