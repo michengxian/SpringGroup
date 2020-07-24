@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.springcloud</groupId>
-    <artifactId>eureka-client</artifactId>
+    <artifactId>application-service-a</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-client</name>
+    <name>application-service-a</name>
     <description>mi</description>
 
     <properties>

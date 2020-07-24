@@ -5,10 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.sql.Timestamp;
 import java.util.ArrayList;
@@ -30,23 +27,23 @@ public class TestController {
         List<UserBean> result = new ArrayList<>();
         UserBean bean = new UserBean("mi",18,userBeanId);
         result.add(bean);
-        System.out.println("EurekaApplicationServerApplication getUserList");
+        System.out.println("EurekaApplicationServerApplication A getUserList");
         return result;
     }
 
 
     @RequestMapping(value="/getTest")
     public String getTest(){
-        return "EurekaApplicationServerApplication getUserList";
+        return "EurekaApplicationServerApplication A getUserList";
     }
 
 
 
-    @RequestMapping("/user/{id}")
-    public String getUser(@PathVariable("id") Long id) {
-
+    @RequestMapping("/getUser")
+    public String getUser(@RequestParam("id") Long id) {
+        System.out.println("application-service-a");
         //获取用户微服务实例
-        ServiceInstance serviceInstance = discoveryClient.getInstances("USER").get(0);
+        ServiceInstance serviceInstance = discoveryClient.getInstances("application-service-a").get(0);
         //控制台输出微服务被调用时间、端口号等信息
         System.out.println("time: " + new Timestamp(System.currentTimeMillis()) + ", serverId: " + serviceInstance.getServiceId() + ", host:" +
                 " " + serviceInstance.getHost()
