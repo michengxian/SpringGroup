@@ -21,9 +21,9 @@ class EurekaApplicationClientApplicationTests {
 
     @Test
     void contextLoads() {
-        ServiceInstance si = this.loadBalancerClient.choose("application-service-b");
+        ServiceInstance si = this.loadBalancerClient.choose("application-service");
         if (si == null){
-            si = this.loadBalancerClient.choose("application-service-a");
+            si = this.loadBalancerClient.choose("application-service");
         }
         StringBuilder sb = new StringBuilder();
         sb.append("http://").append(si.getHost())

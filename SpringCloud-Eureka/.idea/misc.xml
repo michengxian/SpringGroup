@@ -10,6 +10,8 @@
         <option value="$PROJECT_DIR$/eurake-server-01/pom.xml" />
         <option value="$PROJECT_DIR$/eureka-application-server01/pom.xml" />
         <option value="$PROJECT_DIR$/ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-open-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/spring-zuul/pom.xml" />
       </list>
     </option>
   </component>

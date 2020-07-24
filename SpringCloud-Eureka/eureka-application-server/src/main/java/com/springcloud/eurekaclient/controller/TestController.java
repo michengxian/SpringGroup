@@ -41,9 +41,9 @@ public class TestController {
 
     @RequestMapping("/getUser")
     public String getUser(@RequestParam("id") Long id) {
-        System.out.println("application-service-a");
+        System.out.println("application-service");
         //获取用户微服务实例
-        ServiceInstance serviceInstance = discoveryClient.getInstances("application-service-a").get(0);
+        ServiceInstance serviceInstance = discoveryClient.getInstances("application-service").get(0);
         //控制台输出微服务被调用时间、端口号等信息
         System.out.println("time: " + new Timestamp(System.currentTimeMillis()) + ", serverId: " + serviceInstance.getServiceId() + ", host:" +
                 " " + serviceInstance.getHost()

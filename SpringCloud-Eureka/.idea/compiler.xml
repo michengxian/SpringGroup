@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="spring-open-feign" />
         <module name="eureka-client" />
+        <module name="spring-zuul" />
         <module name="eurake-server" />
         <module name="ribbon" />
         <module name="eureka-application-client" />
@@ -22,6 +24,8 @@
       <module name="eureka-application-server01" target="1.8" />
       <module name="eureka-client" target="1.8" />
       <module name="ribbon" target="1.8" />
+      <module name="spring-open-feign" target="1.8" />
+      <module name="spring-zuul" target="1.8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -33,6 +37,8 @@
       <module name="eureka-application-server01" options="-parameters" />
       <module name="eureka-client" options="-parameters" />
       <module name="ribbon" options="-parameters" />
+      <module name="spring-open-feign" options="-parameters" />
+      <module name="spring-zuul" options="-parameters" />
     </option>
   </component>
 </project>
