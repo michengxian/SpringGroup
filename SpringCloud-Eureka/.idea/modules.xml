@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/eurake-server/eurake-server.iml" filepath="$PROJECT_DIR$/eurake-server/eurake-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/eurake-server-01/eurake-server-01.iml" filepath="$PROJECT_DIR$/eurake-server-01/eurake-server-01.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-application-client/eureka-application-client.iml" filepath="$PROJECT_DIR$/eureka-application-client/eureka-application-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-application-server01/eureka-application-server01.iml" filepath="$PROJECT_DIR$/eureka-application-server01/eureka-application-server01.iml" />
       <module fileurl="file://$PROJECT_DIR$/eureka-application-server/eureka-client.iml" filepath="$PROJECT_DIR$/eureka-application-server/eureka-client.iml" />
     </modules>
   </component>

@@ -8,6 +8,7 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eurake-server" />
         <module name="eureka-client" />
+        <module name="eureka-application-server01" />
         <module name="eurake-server-01" />
         <module name="eureka-application-client" />
       </profile>
@@ -17,6 +18,7 @@
       <module name="eurake-server-01" target="1.8" />
       <module name="eureka-application-client" target="1.8" />
       <module name="eureka-application-server" target="1.8" />
+      <module name="eureka-application-server01" target="1.8" />
       <module name="eureka-client" target="1.8" />
     </bytecodeTargetLevel>
   </component>
@@ -26,6 +28,7 @@
       <module name="eurake-server-01" options="-parameters" />
       <module name="eureka-application-client" options="-parameters" />
       <module name="eureka-application-server" options="-parameters" />
+      <module name="eureka-application-server01" options="-parameters" />
       <module name="eureka-client" options="-parameters" />
     </option>
   </component>

@@ -1,5 +1,6 @@
 package com.springcloud.eurekaapplicationclient.controller;
 
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import com.springcloud.eurekaapplicationclient.bean.UserBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
@@ -7,16 +8,21 @@ import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.core.ParameterizedTypeReference;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 public class TestController {
+
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
     @Autowired
     RestTemplate restTemplate;
@@ -51,4 +57,17 @@ public class TestController {
 //        List<UserBean> userBeanList = new ArrayList<>();
         return list.getBody();
     }
+
+
+    @RequestMapping("/ribbon")
+    public String testRibbon() {
+        String userId = "";
+        //调用10次用户微服务
+        for (int i = 1; i <= 10; i++) {
+            //微服务之间调用时，需将serviceId(spring.application.name)作为请求路径父级目录
+            userId = restTemplate.getForObject("http://USER/user/" + i, String.class);
+        }
+        return userId;
+    }
+
 }
