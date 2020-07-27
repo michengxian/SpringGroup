@@ -2,6 +2,7 @@ package com.springcloud.eurekaapplicationclient;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
@@ -18,6 +19,9 @@ class EurekaApplicationClientApplicationTests {
 
     @Autowired
     private LoadBalancerClient loadBalancerClient;
+
+    @Value("${mi.config}")
+    private String configValue;
 
     @Test
     void contextLoads() {
@@ -45,5 +49,15 @@ class EurekaApplicationClientApplicationTests {
         List<Map<String, Object>> result = response.getBody();
         System.out.println(result);
     }
+
+
+    @Test
+    public void getConfigTest(){
+
+        System.out.println(configValue);
+
+    }
+
+
 
 }

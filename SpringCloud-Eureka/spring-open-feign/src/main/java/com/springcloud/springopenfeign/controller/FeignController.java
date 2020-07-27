@@ -26,4 +26,10 @@ public class FeignController {
         return "FeignController "+ res ;
     }
 
+
+    @RequestMapping("/demo2/zuul")
+    public String zuul() {
+        return "FeignController zuul success";
+    }
+
 }
