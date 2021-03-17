@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.mi.learn.springcloud.provider8001.mapper.ProviderMapper">
+
+    <select id="queryUserById" resultType="com.mi.learn.springcloud.bean.UserInfoBean" parameterType="Long">
+        select u.name , ur.name roleName
+        from user u,
+            user_role ur
+        where u.id = #{id}
+            and ur.id = u.role_id
+    </select>
+
+    <select id="queryUser" parameterType="com.mi.learn.springcloud.domin.UserBean" resultType="com.mi.learn.springcloud.domin.UserBean">
+        select u.id,u.name,u.role_id roleId from user u where 1=1
+        <if test="id!=0">
+            and u.id = #{id}
+        </if>
+        <if test="name='' || name = null">
+            and u.name = #{name}
+        </if>
+        <if test="role_id!=0">
+            and u.role_id = #{roleId}
+        </if>
+    </select>
+
+    <insert id="addUser" parameterType="com.mi.learn.springcloud.domin.UserBean">
+        insert into USER (name,role_id) values (#{name},#{roleId});
+    </insert>
+
+    <select id="queryUserRole" parameterType="com.mi.learn.springcloud.domin.UserRoleBean" resultType="com.mi.learn.springcloud.domin.UserRoleBean">
+        select ur.id,ur.name from user_role ur where 1=1
+        <if test="id!=0">
+            and ur.id = #{id}
+        </if>
+        <if test="name='' || name = null">
+            and ur.name = #{name}
+        </if>
+    </select>
+
+    <insert id="addUserRole" parameterType="com.mi.learn.springcloud.domin.UserRoleBean">
+        insert into user_role (name) values (#{name});
+    </insert>
+
+
+</mapper>
