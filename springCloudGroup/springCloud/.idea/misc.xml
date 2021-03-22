@@ -12,6 +12,11 @@
         <option value="$PROJECT_DIR$/provider-8001/pom.xml" />
         <option value="$PROJECT_DIR$/consumer-8010/pom.xml" />
         <option value="$PROJECT_DIR$/zuul-80/pom.xml" />
+        <option value="$PROJECT_DIR$/feign-client-8011/pom.xml" />
+        <option value="$PROJECT_DIR$/feign-client-8012/pom.xml" />
+        <option value="$PROJECT_DIR$/feign-feign-8002/pom.xml" />
+        <option value="$PROJECT_DIR$/feign-server-8003/pom.xml" />
+        <option value="$PROJECT_DIR$/feign-server-8002/pom.xml" />
       </list>
     </option>
   </component>

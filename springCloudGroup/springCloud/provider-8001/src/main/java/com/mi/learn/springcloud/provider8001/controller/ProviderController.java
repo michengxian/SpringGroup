@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @Slf4j
-@RequestMapping("/provider")
 public class ProviderController {
 
     @Autowired
     ProviderServer providerServer;
 
+//    http://localhost/api-provider/provider/queryUserById?seqNo=1616398835253&sourceSystem=mkt&version=1&request=3
     @RequestMapping(value = "/queryUserById",method = RequestMethod.GET)
     public ResponseBean<UserInfoBean> queryUserById(RequestBean<String> requestBean, ResponseBean<UserInfoBean> responseBean){
         log.info("ProviderController queryUserById req : {}",JSONObject.toJSON(requestBean));

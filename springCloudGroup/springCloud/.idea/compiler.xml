@@ -6,9 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="feign-server-8002" />
         <module name="spring-api" />
+        <module name="feign-server-8003" />
+        <module name="feign-client-8011" />
         <module name="provider-8001" />
         <module name="zuul-80" />
+        <module name="feign-client-8012" />
         <module name="consumer-8010" />
         <module name="eureka-6003" />
         <module name="eureka-6002" />
@@ -16,6 +20,9 @@
         <module name="spring-base" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="feign-feign-8002" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
@@ -23,6 +30,11 @@
       <module name="eureka-6001" options="-parameters" />
       <module name="eureka-6002" options="-parameters" />
       <module name="eureka-6003" options="-parameters" />
+      <module name="feign-client-8011" options="-parameters" />
+      <module name="feign-client-8012" options="-parameters" />
+      <module name="feign-feign-8002" options="-parameters" />
+      <module name="feign-server-8002" options="-parameters" />
+      <module name="feign-server-8003" options="-parameters" />
       <module name="provider-8001" options="-parameters" />
       <module name="spring-base" options="-parameters" />
       <module name="zuul-80" options="-parameters" />

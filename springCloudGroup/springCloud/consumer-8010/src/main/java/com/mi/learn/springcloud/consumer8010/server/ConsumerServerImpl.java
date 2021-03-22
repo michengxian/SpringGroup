@@ -28,7 +28,7 @@ public class ConsumerServerImpl implements ConsumerServer {
     private RestTemplate restTemplate;
 //    private HttpUtils utils;
 
-    private static final String PROVIDER_URL = "http://localhost:8001/provider/";
+    private static final String PROVIDER_URL = "http://localhost:8001/";
 //    http://localhost:8010/consumer/queryUserById?seqNo=1614914237651&sourceSystem=hyt&version=2&request=2
 
 
