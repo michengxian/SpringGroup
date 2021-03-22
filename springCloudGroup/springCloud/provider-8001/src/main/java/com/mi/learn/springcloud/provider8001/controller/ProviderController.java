@@ -39,4 +39,11 @@ public class ProviderController {
         responseBean.setResponse(flag);
         return responseBean;
     }
+
+    @RequestMapping(value = "/info",method = RequestMethod.GET)
+    public ResponseBean<String> info(ResponseBean<String> responseBean){
+        log.info("ProviderController info");
+        responseBean.setResponse("ProviderController info");
+        return responseBean;
+    }
 }

@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="provider-8001" />
         <module name="spring-api" />
+        <module name="provider-8001" />
+        <module name="zuul-80" />
         <module name="consumer-8010" />
         <module name="eureka-6003" />
         <module name="eureka-6002" />
@@ -24,6 +25,7 @@
       <module name="eureka-6003" options="-parameters" />
       <module name="provider-8001" options="-parameters" />
       <module name="spring-base" options="-parameters" />
+      <module name="zuul-80" options="-parameters" />
     </option>
   </component>
 </project>

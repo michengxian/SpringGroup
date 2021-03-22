@@ -38,4 +38,12 @@ public class ConsumerController {
         return responseBean;
     }
 
+
+    @RequestMapping(value = "/info",method = RequestMethod.GET)
+    public ResponseBean<String> info(ResponseBean<String> responseBean){
+        log.info("ConsumerController info");
+        responseBean.setResponse("ConsumerController info");
+        return responseBean;
+    }
+
 }

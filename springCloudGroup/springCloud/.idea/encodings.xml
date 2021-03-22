@@ -9,5 +9,6 @@
     <file url="file://$PROJECT_DIR$/spring-api/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-api/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/spring-base/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/zuul-80/src/main/java" charset="UTF-8" />
   </component>
 </project>
