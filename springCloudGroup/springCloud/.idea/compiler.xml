@@ -6,18 +6,18 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="feign-server-8002" />
-        <module name="spring-api" />
-        <module name="feign-server-8003" />
-        <module name="feign-client-8011" />
-        <module name="provider-8001" />
-        <module name="zuul-80" />
-        <module name="feign-client-8012" />
-        <module name="consumer-8010" />
-        <module name="eureka-6003" />
-        <module name="eureka-6002" />
         <module name="eureka-6001" />
         <module name="spring-base" />
+        <module name="feign-client-8012" />
+        <module name="provider-8001" />
+        <module name="eureka-6003" />
+        <module name="zuul-80" />
+        <module name="feign-server-8003" />
+        <module name="feign-server-8002" />
+        <module name="spring-api" />
+        <module name="eureka-6002" />
+        <module name="consumer-8010" />
+        <module name="feign-client-8011" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

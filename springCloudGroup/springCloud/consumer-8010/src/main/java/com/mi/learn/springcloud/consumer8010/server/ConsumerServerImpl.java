@@ -29,6 +29,9 @@ public class ConsumerServerImpl implements ConsumerServer {
 //    private HttpUtils utils;
 
     private static final String PROVIDER_URL = "http://localhost:8001/";
+
+    private static final String ZUUL_URL = "http://localhost/";
+
 //    http://localhost:8010/consumer/queryUserById?seqNo=1614914237651&sourceSystem=hyt&version=2&request=2
 
 
@@ -110,6 +113,22 @@ public class ConsumerServerImpl implements ConsumerServer {
         }
         JSON json = JSON.parseObject(JSON.toJSONString(responseBean.getResponse()));
         Boolean res = JSON.toJavaObject(json,Boolean.class);
+        return res;
+    }
+
+
+
+
+    public String info(){
+        String url = ZUUL_URL+"provider/info";
+        ResponseBean<Object> responseBean = (ResponseBean) restTemplate.getForObject(url,ResponseBean.class);
+        log.info("ConsumerServerImpl info res {}",responseBean);
+        Object obj = responseBean.getResponse();
+        String res = null;
+        if (obj!=null) {
+            log.info(String.valueOf(obj));
+        }
+//        ResponseEntity<UserInfoBean> res = utils.get(PROVIDER_URL+"queryUserById"+"?seqNo=1614914237651&sourceSystem=hyt&version=2&request=2",UserInfoBean.class);
         return res;
     }
 }

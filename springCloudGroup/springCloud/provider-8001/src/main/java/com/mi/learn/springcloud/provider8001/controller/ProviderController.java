@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Random;
+
 @RestController
 @Slf4j
 public class ProviderController {
@@ -42,8 +45,21 @@ public class ProviderController {
 
     @RequestMapping(value = "/info",method = RequestMethod.GET)
     public ResponseBean<String> info(ResponseBean<String> responseBean){
-        log.info("ProviderController info");
+//        Long[] arr = new Long[]{3000L,5000L};
+        long res = new Random().nextInt(2)==0?400:1000;
+        try {
+            Thread.sleep(res);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        log.info("ProviderController info {}",res);
         responseBean.setResponse("ProviderController info");
         return responseBean;
     }
+
+    public static void main(String[] args) {
+        long res = new Random().nextInt(2);
+        System.out.println(res);
+    }
+
 }

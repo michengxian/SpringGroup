@@ -12,4 +12,7 @@ public interface ConsumerServer {
     UserInfoBean queryUserById1(RequestBean<String> requestBean);
 
     Boolean addUser1(RequestBean<UserInfoBean> requestBean);
+
+    String info();
+
 }
